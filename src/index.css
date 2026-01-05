@@ -1,6 +1,39 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in-2s {
+    animation: fadeIn 1s ease-in;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+.portfolio-button:hover {
+    transform: scale(1.05);
+}
+
+.fade-out {
+                    animation: fadeOut 0.8s ease-out forwards;
+                }
+
+                @keyframes fadeOut {
+                    from {
+                        opacity: 1;
+                    }
+                    to {
+                        opacity: 0;
+                    }
+                }
+
 body {
   margin: 0;
   background-color: black;

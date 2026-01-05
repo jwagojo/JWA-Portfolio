@@ -397,42 +397,32 @@ export default function ASCIIText({
   useEffect(() => {
     if (!containerRef.current) return;
 
-    const { width, height } = containerRef.current.getBoundingClientRect();
+    let mounted = true;
+    let timeoutId;
 
-    if (width === 0 || height === 0) {
-      const observer = new IntersectionObserver(([entry]) => {
-        if (entry.isIntersecting && entry.boundingClientRect.width > 0 && entry.boundingClientRect.height > 0) {
-          const { width: w, height: h } = entry.boundingClientRect;
+    const initializeASCII = () => {
+      if (!mounted || !containerRef.current) return;
+      
+      const { width, height } = containerRef.current.getBoundingClientRect();
+      
+      if (width === 0 || height === 0) {
+        timeoutId = setTimeout(initializeASCII, 100);
+        return;
+      }
 
-          asciiRef.current = new CanvAscii(
-            { text, asciiFontSize, textFontSize, textColor, planeBaseHeight, enableWaves },
-            containerRef.current,
-            w,
-            h
-          );
-          asciiRef.current.load();
+      asciiRef.current = new CanvAscii(
+        { text, asciiFontSize, textFontSize, textColor, planeBaseHeight, enableWaves },
+        containerRef.current,
+        width,
+        height
+      );
+      asciiRef.current.load();
+    };
 
-          observer.disconnect();
-        }
-      }, { threshold: 0.1 });
-
-      observer.observe(containerRef.current);
-
-      return () => {
-        observer.disconnect();
-        if (asciiRef.current) {
-          asciiRef.current.dispose();
-        }
-      };
-    }
-
-    asciiRef.current = new CanvAscii(
-      { text, asciiFontSize, textFontSize, textColor, planeBaseHeight, enableWaves },
-      containerRef.current,
-      width,
-      height
-    );
-    asciiRef.current.load();
+    // Use requestAnimationFrame to ensure DOM is ready
+    requestAnimationFrame(() => {
+      timeoutId = setTimeout(initializeASCII, 100);
+    });
 
     const ro = new ResizeObserver(entries => {
       if (!entries[0] || !asciiRef.current) return;
@@ -444,6 +434,8 @@ export default function ASCIIText({
     ro.observe(containerRef.current);
 
     return () => {
+      mounted = false;
+      clearTimeout(timeoutId);
       ro.disconnect();
       if (asciiRef.current) {
         asciiRef.current.dispose();
