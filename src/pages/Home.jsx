@@ -1,4 +1,3 @@
-import Silk from '../components/Silk';
 import ASCIIText from '../components/ASCIIText';
 import '../index.css';
 import { useNavigate } from 'react-router-dom';
@@ -8,47 +7,36 @@ function Home() {
     const navigate = useNavigate();
     const [isTransitioning, setIsTransitioning] = useState(false);
 
-    const handlePortfolioClick = () => {
+    const handlePortfolioClick = (e) => {
         e.preventDefault();
-        // study this ^^^^
         setIsTransitioning(true);
         setTimeout(() => {
             navigate('/portfolio');
         }, 1000); // Duration should match the CSS transition duration
     };
 
-
     return (
-        <div style={{width: "100vw", height: "100vh", position: "relative", overflow: "hidden"}}>
-            <div style={{position: "absolute", width: "100vw", height: "100vh", zIndex: 0}}>
-               <Silk 
-                speed={5.5}
-                scale={1}
-                color="#c0c0c0ff"
-                noiseIntensity={5}
-                rotation={0}            
-                /> 
-            </div>
-            <div className={isTransitioning ? "fade-out" : ""} style={{position: "absolute", width: "100%", height: "300px", top: "20%", left: "50%", transform: "translateX(-50%)", zIndex: 1}}>
+        <div className="w-screen h-screen relative overflow-hidden">
+            <div className={`absolute w-full h-[300px] top-[20%] left-1/2 -translate-x-1/2 z-[1] ${isTransitioning ? "fade-out" : "fade-in-ASCII"}`}>
                 <ASCIIText 
-                text="Hello!"
-                enableWaves={true}
-                asciiFontSize={5}
+                    text="Hello!"
+                    enableWaves={true}
+                    asciiFontSize={5}
                 />
             </div>
-            <div className={isTransitioning ? "fade-out" : ""} style={{position: "absolute", width: "100%", height: "300px", top: "35%", left: "50%", transform: "translateX(-50%)", zIndex: 2}}>
+            <div className={`absolute w-full h-[300px] top-[35%] left-1/2 -translate-x-1/2 z-[2] ${isTransitioning ? "fade-out" : "fade-in-ASCII"}`}>
                 <ASCIIText 
-                text="I'm Wesley Agojo"
-                enableWaves={false}
-                asciiFontSize={5}
+                    text="I'm Wesley Agojo"
+                    enableWaves={false}
+                    asciiFontSize={5}
                 />
             </div>
-            <div className={`fade-in-2s ${isTransitioning ? "fade-out" : ''}`} style={{position: "absolute", bottom: "35%", left: "50%", transform: "translateX(-50%)", zIndex: 3, display: "flex", gap: "40px",}}>
+            <div className={`absolute bottom-[35%] left-1/2 -translate-x-1/2 z-[3] flex gap-10 ${isTransitioning ? "fade-out" : 'fade-in-2s'}`}>
                 <a
                     href='/portfolio'
                     onClick={handlePortfolioClick}
-                    className="portfolio-button"
-                    style={{color: "white", fontSize: "24px", textDecoration: "none", fontFamily: "IBM Plex Mono, monospace", border: "2px solid white", padding: "15px 40px", transition: "all 0.3s"}}>
+                    className="portfolio-button text-white text-2xl no-underline font-['IBM_Plex_Mono',_monospace] border-2 border-white px-10 py-[15px] transition-all duration-300"
+                >
                     Explore my portfolio
                 </a>
             </div>

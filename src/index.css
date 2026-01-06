@@ -10,6 +10,15 @@
     }
 }
 
+@keyframes fadeOut {
+                    from {
+                        opacity: 1;
+                    }
+                    to {
+                        opacity: 0;
+                    }
+                }
+
 .fade-in-2s {
     animation: fadeIn 1s ease-in;
     animation-delay: 2s;
@@ -19,20 +28,26 @@
 
 .portfolio-button:hover {
     transform: scale(1.05);
+    transition: transform 1s;
 }
 
 .fade-out {
-                    animation: fadeOut 0.8s ease-out forwards;
+                    animation: fadeOut 0.5s ease-out forwards;
                 }
 
-                @keyframes fadeOut {
-                    from {
-                        opacity: 1;
-                    }
-                    to {
-                        opacity: 0;
-                    }
-                }
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in forwards;
+}
+
+.fade-in-ASCII {
+    animation: fadeIn 1.5s ease-in forwards;
+}
+
+.metallic-border {
+  box-shadow: inset 0 0 20px rgba(192, 192, 192, 0.5), inset 0 0 40px rgba(255, 255, 255, 0.3);
+  border-image: linear-gradient(135deg, #e8e8e8, #c0c0c0, #ffffff, #c0c0c0, #e8e8e8) 1;
+}
 
 body {
   margin: 0;
