@@ -51,32 +51,32 @@ function Home() {
 
             {isMobile &&(
                 <>
-                    <div className={`absolute w-full h-[150px] md:h-[300px] top-[15%] md:top-[5%] left-1/2 -translate-x-1/2 z-[1] px-2 ${isTransitioning ? "fade-out" : "fade-in-ASCII"}`}>
+                    <div className={`absolute w-full h-[200px] md:h-[300px] top-[15%] md:top-[5%] left-1/2 -translate-x-1/2 z-[1] px-2 ${isTransitioning ? "fade-out" : "fade-in-ASCII"}`}>
                         <ASCIIText 
                             text="Hello!"
                             enableWaves={true}
                             asciiFontSize={isMobile ? 2 : 5}
                         />
                     </div>
-                    <div className={`absolute w-full h-[150px] md:h-[300px] top-[30%] md:top-[20%] left-1/2 -translate-x-1/2 z-[2] px-2 ${isTransitioning ? "fade-out" : "fade-in-ASCII"}`}>
+                    <div className={`absolute w-full h-[200px] md:h-[300px] top-[30%] md:top-[20%] left-1/2 -translate-x-1/2 z-[2] px-2 ${isTransitioning ? "fade-out" : "fade-in-ASCII"}`}>
                         <ASCIIText 
                             text="I'm"
                             enableWaves={false}
                             asciiFontSize={isMobile ? 2 : 5}
                         />
                     </div>
-                    <div className={`absolute w-full h-[150px] md:h-[300px] top-[45%] md:top-[35%] left-1/2 -translate-x-1/2 z-[2] px-1 ${isTransitioning ? "fade-out" : "fade-in-ASCII"}`}>
+                    <div className={`absolute w-full h-[175px] md:h-[300px] top-[45%] md:top-[35%] left-1/2 -translate-x-1/2 z-[2] px-1 ${isTransitioning ? "fade-out" : "fade-in-ASCII"}`}>
                         <ASCIIText 
-                            text="Chud Agojo"
+                            text="Wesley Agojo"
                             enableWaves={false}
                             asciiFontSize={isMobile ? 2 : 5}
                         />
                     </div>
-                    <div className={`absolute bottom-[20%] md:bottom-[30%] left-1/2 -translate-x-1/2 z-[3] flex gap-4 md:gap-10 px-4 ${isTransitioning ? "fade-out" : 'fade-in-2s'}`}>
+                    <div className={`absolute bottom-[25%] md:bottom-[30%] left-1/2 -translate-x-1/2 z-[3] flex gap-4 md:gap-10 px-4 ${isTransitioning ? "fade-out" : 'fade-in-2s'}`}>
                         <a
                             href='/portfolio'
                             onClick={handlePortfolioClick}
-                            className="portfolio-button text-white text-xs md:text-2xl no-underline font-['IBM_Plex_Mono',_monospace] border-2 border-white px-4 md:px-10 py-2 md:py-[15px] transition-all duration-300 whitespace-nowrap"
+                            className="portfolio-button text-white md:text-2xl no-underline font-['IBM_Plex_Mono',_monospace] border-2 border-white px-4 md:px-10 py-2 md:py-[15px] transition-all duration-300 whitespace-nowrap"
                         >
                             Explore my portfolio
                         </a>
