@@ -28,14 +28,14 @@ function Home() {
                 <ASCIIText 
                     text="I'm"
                     enableWaves={false}
-                    asciiFontSize={4}
+                    asciiFontSize={5}
                 />
             </div>
             <div className={`absolute w-full h-[180px] md:h-[300px] top-[45%] md:top-[35%] left-1/2 -translate-x-1/2 z-[2] px-2 ${isTransitioning ? "fade-out" : "fade-in-ASCII"}`}>
                 <ASCIIText 
                     text="Wesley Agojo"
                     enableWaves={false}
-                    asciiFontSize={4}
+                    asciiFontSize={5}
                 />
             </div>
             <div className={`absolute bottom-[25%] md:bottom-[30%] left-1/2 -translate-x-1/2 z-[3] flex gap-4 md:gap-10 px-4 ${isTransitioning ? "fade-out" : 'fade-in-2s'}`}>
