@@ -421,7 +421,7 @@ export default function ASCIIText({
 
     // Use requestAnimationFrame to ensure DOM is ready
     requestAnimationFrame(() => {
-      timeoutId = setTimeout(initializeASCII, 600);
+      timeoutId = setTimeout(initializeASCII, 750);
     });
 
     const ro = new ResizeObserver(entries => {
