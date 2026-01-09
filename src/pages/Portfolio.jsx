@@ -29,7 +29,7 @@ function Portfolio() {
                 </div>
             </div>
             {showMenu && (
-                <nav className={`absolute left-6 md:left-20 top-6 md:top-20 right-6 md:right-auto z-10 flex flex-col ${isTransitioning? 'fade-out' : 'fade-in'}`}>
+                <nav className={`absolute left-6 md:left-20 top-6 md:top-20 right-6 md:right-auto z-10 flex flex-col flex-wrap ${isTransitioning? 'fade-out' : 'fade-in'}`}>
                     <h1 className="text-white text-2xl md:text-5xl font-['IBM_Plex_Mono',_monospace] font-semibold mb-2 md:mb-4">
                         Wesley Agojo
                     </h1>
