@@ -19,7 +19,15 @@
                     }
                 }
 
+@tailwind utilities;
 
+@layer utilities {
+  .text-stroke-1 {
+    -webkit-text-stroke-width: .3px;
+    -webkit-text-stroke-color: black;
+    color: white; /* Optional: Set text fill color */
+  }
+}
 
 
 .fade-in-2s {

@@ -9,7 +9,7 @@ function Portfolio() {
     const [useSection, setUseSection] = useState('');
     const [isTransitioning, setIsTransitioning] = useState(false);
     const [showMenu, setShowMenu] = useState(true);
-
+    
     const handleSectionClick = (section) => {
         setIsTransitioning(true);
         setTimeout(() => {
