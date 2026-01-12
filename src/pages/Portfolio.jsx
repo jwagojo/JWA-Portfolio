@@ -3,7 +3,7 @@ import Projects from '../components/Projects';
 import Experience from '../components/Experience';
 import Skills from '../components/Skills';
 import Contact from '../components/Contact';
-import BackButton from '@/components/BackButton';
+import BackButton from '../components/BackButton';
 
 function Portfolio() {
     const [useSection, setUseSection] = useState('');

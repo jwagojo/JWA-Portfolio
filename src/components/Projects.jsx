@@ -1,9 +1,25 @@
-
+import  FlipCard   from "./animate-ui/components/community/flip-card";
 
 function Projects() {
+
+    const data = {
+        name: 'Animate UI',
+        username: 'animate_ui',
+        image:
+            'https://pbs.twimg.com/profile_images/1950218390741618688/72447Y7e_400x400.jpg',
+        bio: 'A fully animated, open-source component distribution built with React, TypeScript, Tailwind CSS, and Motion.',
+        stats: { following: 200, followers: 2900, posts: 120 },
+        socialLinks: {
+            linkedin: 'https://linkedin.com',
+            github: 'https://github.com',
+            twitter: 'https://twitter.com',
+        }, 
+    };
+
+
     return (
         <div>
-            <h2>Projects Section</h2>
+            <FlipCard data={data} />
         </div>
     )
 }
