@@ -4,7 +4,7 @@ function Skills() {
     return (
         <div>
 
-            <div className={`absolute flex-row flex-wrap top-[12%] md:top-[25%] left-1/2 -translate-x-1/2 z-[3] flex gap-3 md:gap-7 items-center`}>
+            <div className={`max-h-full max-w-full absolute flex-row flex-wrap top-[12%] md:top-[25%] left-1/2 -translate-x-1/2 z-[3] flex gap-3 md:gap-7 items-center`}>
                         {
                             skills.map((skill, index) => (
                                 <a

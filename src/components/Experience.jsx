@@ -8,8 +8,8 @@ function Experience() {
         username: 'Software Developer Co-op',
         image:
             'https://www.ibm.com/brand/experience-guides/developer/b1db1ae501d522a1a4b49613fe07c9f1/01_8-bar-positive.svg',
-        bio: 'Incoming January 2026...',
-        stats: { following: 200, followers: 2900, posts: 120 }
+        location:'Lowell, MA',
+        bio: ["Incoming January 2026..."]
         }, 
         
         {
@@ -17,8 +17,12 @@ function Experience() {
         username: 'Software Engineer Intern',
         image:
             'https://media.licdn.com/dms/image/v2/D4E0BAQEdmQKS5qlc5Q/company-logo_200_200/company-logo_200_200/0/1697647304213/vierra_logo?e=2147483647&v=beta&t=CskVln4C4yCgZ8OnuZeO6O2qqVhSxDszQVvadfVyD1A',
-        bio: 'Incoming January 2026...',
-        stats: { following: 200, followers: 2900, posts: 120 }
+        location:'Cambridge, MA',
+        bio: [
+            "Built customer-facing pages with Next.js, React, Tailwind, and TypeScript.",
+            "Developed AI ad automation agent that analyzes client websites and generates platform-specific ad campaigns using LLM.",
+            "Optimized PostgreSQL data layer to store website analysis and creative assets"
+        ]
         },
         
         {
@@ -26,18 +30,31 @@ function Experience() {
         username: 'President',
         image:
             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqUWrxeJVbvFammBZPF11hAnOSPob3oNDQdg&s',
-        bio: 'Incoming January 2026...',
-        stats: { following: 200, followers: 2900, posts: 120 }
+        location:'Lowell, MA',
+        bio: [
+            "Directed an executive board of 15 officers, overseeing project timelines for cultural initiatives", 
+            "Grew engagement through club culture and effective reported channels for project management", 
+            "Served as official representative to UML community and external organizations, promoting Filipino heritage"
+        ]
+        }, 
+
+        {
+        name: 'BHS Flipped Internship',
+        username: 'Avionics Intern',
+        image:
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv4jOCFq6bItvpHWvScdEXPUIZ5QYT5QVEQQ&s',
+        location:'Burlington, MA',
+        bio: ["Building drones, learn how to pilot and program them.","Use them to landscape nearby areas, mark up lands of interest."]
         }, 
     ];
 
 
     return (
         <div>
-            <div className="absolute flex-row flex-wrap top-[12%] md:top-[25%] left-1/2 -translate-x-1/2 z-[3] flex gap-3 md:gap-7 items-center">
+            <div className="absolute px-12 py-12 top-[20%] left-[10%] flex-row flex-wrap max-h-full max-w-full flex gap-4 md:gap-7">
                 
                 {data.map((item, index) => ((
-                    <div key={index} className="md:scale-120  w-fit portfolio-button   px-20 py-[30px] transition-all duration-300 whitespace-nowrap">
+                    <div key={index} className="scale-80 md:scale-110  portfolio-button px-8 py-[15px] transition-all">
                     <FlipCard data={item} />
                     </div>
                     )))

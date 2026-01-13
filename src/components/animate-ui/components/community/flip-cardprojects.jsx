@@ -51,23 +51,20 @@ export default function FlipCard({
       </motion.div>
       {/* BACK: Bio + Stats + Socials */}
       <motion.div
-        className="absolute inset-0 backface-hidden rounded-md border-2 border-foreground/20 px-3 py-3 flex flex-col gap-y-4 bg-gradient-to-tr from-muted via-background to-muted "
+        className="absolute inset-0 backface-hidden rounded-md border-2 border-foreground/20 px-4 py-6 flex flex-col justify-between items-center gap-y-4 bg-gradient-to-tr from-muted via-background to-muted "
         initial={{ rotateY: 180 }}
         animate={isFlipped ? 'front' : 'back'}
         variants={cardVariants}
         style={{ transformStyle: 'preserve-3d', rotateY: 180 }}>
-        <h5 className="font-bold">Location: 
-          <p className="font-normal text-xs md:text-sm text-muted-foreground">
-          {data.location}
+        <p className="text-xs md:text-sm text-muted-foreground text-center">
+          {data.bio}
         </p>
-        </h5>
-        <h5 className="font-bold">Achievements: 
-          <ul className="font-normal text-xs md:text-sm text-muted-foreground">
-            {data.bio.map((item, index) => (
-              <li key={index}>• {item}</li>
-            ))}
-        </ul>
-        </h5>
+
+       
+
+          
+          
+          <Button>Follow</Button>
       </motion.div>
     </div>
   );

@@ -70,7 +70,7 @@ function Portfolio() {
             )}
 
             {!showMenu && (
-                <div className={`absolute w-full h-full top-0 left-0 flex justify-center items-center p-6 md:p-20 ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
+                <div className={`${isTransitioning ? 'fade-out' : 'fade-in'}`}>
                     <BackButton onClick={() => handleSectionClick('')} />
                     {useSection === 'projects' && <Projects />}
                     {useSection === 'experience' && <Experience />}
