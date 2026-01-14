@@ -51,7 +51,7 @@ export default function FlipCard({
       </motion.div>
       {/* BACK: Bio + Stats + Socials */}
       <motion.div
-        className="absolute inset-0 backface-hidden rounded-md border-2 border-foreground/20 px-4 py-6 flex flex-col justify-between items-center gap-y-4 bg-gradient-to-tr from-muted via-background to-muted "
+        className="absolute inset-0 backface-hidden rounded-md border-2 border-foreground/20 px-4 py-6 flex flex-col gap-y-4 bg-gradient-to-tr from-muted via-background to-muted overflow-y-auto"
         initial={{ rotateY: 180 }}
         animate={isFlipped ? 'front' : 'back'}
         variants={cardVariants}
