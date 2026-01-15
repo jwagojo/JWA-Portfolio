@@ -47,10 +47,10 @@ export default function FlipCard({
             src={data.image}
             alt={data.name}
             className="size-18 md:size-25 rounded-full object-cover mb-4 border-2" />
-          <h2 className="font-['calamitech'] text-lg text-white text-foreground">{data.name}</h2>
-          <p className="scale-80 underline underline-offset-3 font-['calamitech'] text-sm text-gray-400">{data.username}</p>
+          <h2 className="font-['calamitech'] text-sm md:text-lg text-white text-foreground">{data.name}</h2>
+          <p className="scale-80 md:scale-90 underline underline-offset-3 font-['calamitech'] text-xs text-gray-400">{data.username}</p>
         </div>
-        <p className="scale-80 font-['calamitech'] text-xs text-gray-400">{data.date}</p>
+        <p className="scale-70 md:scale-80 font-['calamitech'] text-xs text-gray-400">{data.date}</p>
       </motion.div>
       {/* BACK: Bio + Stats + Socials */}
       <motion.div
