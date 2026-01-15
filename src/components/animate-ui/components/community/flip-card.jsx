@@ -38,16 +38,19 @@ export default function FlipCard({
       {/* FRONT: Profile */}
       
       <motion.div
-        className="absolute inset-0 backface-hidden rounded-md border-gray-500 border-1 border-foreground/20 px-4 py-6 flex flex-col items-center justify-center bg-gradient-to-br from-muted via-background to-muted text-center"
+        className="absolute inset-0 backface-hidden rounded border-white border-1 border-foreground/20 px-4 py-6 flex flex-col items-center justify-between bg-gradient-to-br from-muted via-background to-muted text-center"
         animate={isFlipped ? 'back' : 'front'}
         variants={cardVariants}
         style={{ transformStyle: 'preserve-3d' }}>
-        <img
-          src={data.image}
-          alt={data.name}
-          className="size-20 md:size-24 rounded-full object-cover mb-4 border-2" />
-        <h2 className="text-2xl text-black font-bold text-foreground">{data.name}</h2>
-        <p className="text-black">{data.username}</p>
+        <div className='flex flex-col items-center justify-center'>
+            <img
+            src={data.image}
+            alt={data.name}
+            className="size-18 md:size-25 rounded-full object-cover mb-4 border-2" />
+          <h2 className="font-['calamitech'] text-lg text-white text-foreground">{data.name}</h2>
+          <p className="scale-80 underline underline-offset-3 font-['calamitech'] text-sm text-gray-400">{data.username}</p>
+        </div>
+        <p className="scale-80 font-['calamitech'] text-xs text-gray-400">{data.date}</p>
       </motion.div>
       {/* BACK: Bio + Stats + Socials */}
       <motion.div
