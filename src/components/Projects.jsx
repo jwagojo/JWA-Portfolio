@@ -12,7 +12,7 @@ function Projects() {
         {
         name: 'Audiobyte',
         imageURL: '/img/Audiobyte.jpg',
-        overview: 'A react web app that allows users to record, share, and listen to audio files.',
+        overview: 'A react web app that allows users to upload, share, and listen to audio files.',
         techstack:'AWS (S3, DynamoDB, Lambda, Cognito), React.js, JavaScript, GraphQL, Tailwind CSS, Python CDK',
         link: 'https://github.com/jwagojo/AudioByte',
         details: ["Developed a full-stack cloud-native music streaming platform with secure authentication, real-time audio playback, and personalized library management using React.js and AWS serverless infrastructure.",
