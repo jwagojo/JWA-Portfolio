@@ -19,17 +19,17 @@ function ProjectComponent({data}) {
                 <h2 className="text-2xl font-bold mb-4 bg-white rounded-md text-black p-1 inline-block w-fit">{data.name}</h2>
                 <h5 className="font-bold underline text-white">Overview:
                 </h5>
-                <p className="font-normal text-sm md:text-sm text-muted-foreground text-white">
+                <p className="font-normal text-sm md:text-base text-muted-foreground text-white">
                         {data.overview}
                     </p>
                 <h5 className="font-bold underline text-white">Tech Stack:
                 </h5>
-                <p className="font-normal text-sm md:text-sm text-muted-foreground text-white">
+                <p className="font-normal text-sm md:text-base text-muted-foreground text-white">
                         {data.techstack}
                     </p>
                 <h5 className="font-bold underline text-white">Details:
                 </h5>
-                <ul className="font-normal text-sm md:text-sm text-muted-foreground text-white">
+                <ul className="font-normal text-sm md:text-base text-muted-foreground text-white">
                         {data.details.map((item, index) => (
                         <li key={index}>- {item}</li>
                         ))}
