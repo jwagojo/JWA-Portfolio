@@ -1,8 +1,11 @@
 
 
 function ProjectComponent({data}) {
+
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
     return (
-        <a className="flex flex-row items-center gap-8 p-6" 
+        <a className={`flex items-center gap-8 p-6 ${isMobile ? 'flex-col' : 'flex-row'}`} 
         href={data.link}
         target="_blank"
         rel="noopener noreferrer"

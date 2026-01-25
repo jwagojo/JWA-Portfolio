@@ -95,6 +95,7 @@
     transition: transform 1s;
 }
 
+
 .scale-up {
     transform: scale(1.05);
     transition: transform 1s;

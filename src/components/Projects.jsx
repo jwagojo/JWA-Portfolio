@@ -1,6 +1,12 @@
-import  ProjectComponent   from "./ProjectComponent";
+import ProjectComponent from "./ProjectComponent";
+import { useEffect, useRef, useState } from "react";
 
 function Projects() {
+
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+    const containerRef = useRef(null);
+    const [itemOpacities, setItemOpacities] = useState([]);
+    const [showScrollIndicator, setShowScrollIndicator] = useState(true);
 
     const Projects = [
         {
@@ -42,7 +48,7 @@ function Projects() {
         techstack:'Python, YOLOv8, OpenCV, SAM2, Supervision',
         link: 'https://github.com/jwagojo/Golf-Tracker',
         details: ["Engineered an advanced video analysis system using Python, YOLOv8(computer vision), and the SORT algorithm to accurately detect and track golf balls and players in video.",
-                  "Developed a custom stroke detection to identify ball strikes by analyzing sudden, significant increases in the ball’s pixel-based velocity",
+                  "Developed a custom stroke detection to identify ball strikes by analyzing sudden, significant increases in the ball's pixel-based velocity",
                   "Implemented a tracking pipeline with OpenCV and Supervision for frame processing and visual annotation, exporting performance data(max speed, distance, duration) for each stroke to JSON."
         ]
         },
@@ -59,17 +65,90 @@ function Projects() {
         }
     ];
 
+    useEffect(() => {
+        // Hide scroll indicator after 3 seconds
+        const timer = setTimeout(() => {
+            setShowScrollIndicator(false);
+        }, 3000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    useEffect(() => {
+        const calculateOpacities = () => {
+            if (!containerRef.current) return;
+
+            const container = containerRef.current;
+            const items = container.querySelectorAll('.portfolio-button');
+            const containerRect = container.getBoundingClientRect();
+            const containerBottom = containerRect.bottom;
+            const fadeDistance = 200; // Distance from bottom where fade starts
+
+            const opacities = Array.from(items).map((item) => {
+                const itemRect = item.getBoundingClientRect();
+                const itemBottom = itemRect.bottom;
+                const itemCenter = itemRect.top + itemRect.height / 2;
+
+                // Calculate distance from container bottom
+                const distanceFromBottom = containerBottom - itemCenter;
+
+                if (distanceFromBottom > fadeDistance) {
+                    return 1; // Fully visible
+                } else if (distanceFromBottom < 0) {
+                    return 0; // Completely hidden
+                } else {
+                    // Fade based on distance
+                    return distanceFromBottom / fadeDistance;
+                }
+            });
+
+            setItemOpacities(opacities);
+        };
+
+        const container = containerRef.current;
+        if (container) {
+            calculateOpacities();
+            container.addEventListener('scroll', calculateOpacities);
+            window.addEventListener('resize', calculateOpacities);
+        }
+
+        return () => {
+            if (container) {
+                container.removeEventListener('scroll', calculateOpacities);
+            }
+            window.removeEventListener('resize', calculateOpacities);
+        };
+    }, []);
 
     return (
-            <div className="absolute py-20 left-[10%] top-6 bottom-6 flex-col md:flex-row flex-wrap flex gap-4 md:gap-7 overflow-y-auto">
-                
-                {Projects.map((item, index) => ((
-                    <div key={index} className="portfolio-button px-8 py-[40px] transition-all">
-                    <ProjectComponent data={item} />
-                    </div>  
-                    )))
-                }
+            <div className="relative w-full h-full">
+                {showScrollIndicator && (
+                    <div className="absolute top-8 left-1/2 transform -translate-x-1/2 pointer-events-none animate-bounce">
+                        <p className="text-white text-sm md:text-2xl font-semibold tracking-wider">
+                            scroll down ↓
+                        </p>
+                    </div>
+                )}
+                <div 
+                    ref={containerRef}
+                    className={`absolute py-10 md:py-40 left-[10%] top-3 md:top-6 bottom-3 md:bottom-6 flex-wrap flex gap-4 md:gap-40 overflow-y-auto`}
+                >
+                    
+                    {Projects.map((item, index) => ((
+                        <div 
+                            key={index}
+                            style={{ 
+                                opacity: itemOpacities[index] ?? 1,
+                                transition: 'opacity .5s ease-out, transform 1s ease',
+                            }} 
+                            className="scale-90 md:scale-100 portfolio-button px-2 md:px-8 py-[40px] transition-all"
+                        >
+                            <ProjectComponent data={item} />
+                        </div>  
+                        )))
+                    }
 
+                </div>
             </div>
     )
 }
