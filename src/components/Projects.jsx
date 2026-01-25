@@ -11,8 +11,8 @@ function Projects() {
     const Projects = [
         {
         name: 'Audiobyte',
-        imageURL: '../src/assets/img/Audiobyte.jpg',
-        overview: 'A reactive web app that allows users to record, share, and listen to audio files.',
+        imageURL: '/img/Audiobyte.jpg',
+        overview: 'A react web app that allows users to record, share, and listen to audio files.',
         techstack:'AWS (S3, DynamoDB, Lambda, Cognito), React.js, JavaScript, GraphQL, Tailwind CSS, Python CDK',
         link: 'https://github.com/jwagojo/AudioByte',
         details: ["Developed a full-stack cloud-native music streaming platform with secure authentication, real-time audio playback, and personalized library management using React.js and AWS serverless infrastructure.",
@@ -22,8 +22,8 @@ function Projects() {
         },
         {
         name: 'ChaChing',
-        imageURL: '../src/assets/img/ChaChing.jpg',
-        overview: 'A reactive web app that allows users to close registers more efficiently (Specifically made for Gong Cha Stores).',
+        imageURL: '/img/ChaChing.jpg',
+        overview: 'A react web app that allows users to close registers more efficiently (Specifically made for Gong Cha Stores).',
         techstack:'JavaScript, React.js, Azure Cosmos DB, Tailwind CSS',
         link: 'https://github.com/jwagojo/ChaChing',
         details: ["Developed a proprietary calculation engine that analyzes cash drawer contents and determines optimal allocation of cash bills in the register and the distribution between daily revenue collection and safe storage.",
@@ -33,7 +33,7 @@ function Projects() {
         },
         {
         name: 'Styler',
-        imageURL: '../src/assets/img/Styler.jpg',
+        imageURL: '/img/Styler.jpg',
         overview: 'A mobile application that allows users to virtualize their wardrobe and create outfits.',
         techstack:'Java, Android SDK, Room Database, Retrofit, Model-view-viewmodel (MVVM) architecture',
         link: 'https://github.com/jwagojo/Styler',
@@ -43,7 +43,7 @@ function Projects() {
         },
         {
         name: 'Golf Tracker (Work in Progress)',
-        imageURL: '../src/assets/img/GolfTracker.png',
+        imageURL: '/img/GolfTracker.png',
         overview: 'A Python-based video analysis tool that uses YOLOv8 and SORT algorithms to detect golf balls and track strokes, generating annotated video and JSON data exports.',
         techstack:'Python, YOLOv8, OpenCV, SAM2, Supervision',
         link: 'https://github.com/jwagojo/Golf-Tracker',
@@ -54,7 +54,7 @@ function Projects() {
         },
         {
         name: 'Sokoban',
-        imageURL: '../src/assets/img/Sokoban.png',
+        imageURL: '/img/Sokoban.png',
         overview: 'A C++ puzzle game built with the SFML library that features sprite-based rendering, crate-pushing mechanics with collision detection, and audio feedback for victory conditions.',
         techstack:'C++, Linux, Simple and Fast Multimedia Library (SFML), Unit Testing',
         link: 'https://github.com/jwagojo/Sokoban',
