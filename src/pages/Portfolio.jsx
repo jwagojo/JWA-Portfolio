@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Projects from '../components/Projects';
 import Experience from '../components/Experience';
 import Skills from '../components/Skills';
@@ -9,7 +10,15 @@ function Portfolio() {
     const [useSection, setUseSection] = useState('');
     const [isTransitioning, setIsTransitioning] = useState(false);
     const [showMenu, setShowMenu] = useState(true);
+    const location = useLocation();
     
+    useEffect(() => {
+        const hash = location.hash.replace('#', '');
+        if (hash && ['projects', 'experience', 'skills', 'contact'].includes(hash)) {
+            handleSectionClick(hash);
+        }
+    }, [location.hash]);
+
     const handleSectionClick = (section) => {
         setIsTransitioning(true);
         setTimeout(() => {
