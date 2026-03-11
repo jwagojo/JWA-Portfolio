@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Projects from '../components/Projects';
 import Experience from '../components/Experience';
 import Skills from '../components/Skills';
@@ -9,7 +10,15 @@ function Portfolio() {
     const [useSection, setUseSection] = useState('');
     const [isTransitioning, setIsTransitioning] = useState(false);
     const [showMenu, setShowMenu] = useState(true);
+    const location = useLocation();
     
+    useEffect(() => {
+        const hash = location.hash.replace('#', '');
+        if (hash && ['projects', 'experience', 'skills', 'contact'].includes(hash)) {
+            handleSectionClick(hash);
+        }
+    }, [location.hash]);
+
     const handleSectionClick = (section) => {
         setIsTransitioning(true);
         setTimeout(() => {
@@ -34,7 +43,7 @@ function Portfolio() {
                         Wesley Agojo
                     </h1>
                     <h2 className="font-['IBM_Plex_Mono',_monospace] mb-2 text-xs md:text-base" style={{ color: '#d5d3d3ff' }}>
-                        Incoming Software Developer Co-op @ IBM | CS + Math Minor @ University of Massachusetts Lowell '27
+                        Software Developer Intern @ IBM | CS + Math Minor @ University of Massachusetts Lowell '27
                     </h2>
                     <div className="mt-4 md:mt-8 flex flex-col gap-3 md:gap-4">
                         <a 
@@ -70,7 +79,7 @@ function Portfolio() {
             )}
 
             {!showMenu && (
-                <div className={`absolute inset-0 p-6 md:p-20 ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
+                <div className={`absolute inset-0 custom-scrollbar ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
                     <BackButton onClick={() => handleSectionClick('')} />
                     {useSection === 'projects' && <Projects />}
                     {useSection === 'experience' && <Experience />}

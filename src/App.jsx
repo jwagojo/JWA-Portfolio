@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from "@/pages/Home"
 import Portfolio from "@/pages/Portfolio"
+import Email from "@/pages/Email"
 import Silk from "./components/Silk"
 
 function App(){
@@ -18,6 +19,7 @@ function App(){
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/portfolio" element={<Portfolio />} />
+                <Route path="/email" element={<Email />} />
             </Routes>
         </BrowserRouter>
     )
