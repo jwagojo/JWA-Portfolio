@@ -31,7 +31,7 @@ function Home() {
                     </div>
                     <div className={`absolute w-full h-[300px] top-[30%] left-1/2 -translate-x-1/2 z-[2] ${isTransitioning ? "fade-out" : "fade-in-ASCII"}`}>
                         <ASCIIText 
-                            text="I'm Royce Chud Roxas"
+                            text="I'm Johann *******"
                             enableWaves={false}
                             asciiFontSize={5}
                             textFontSize={200}
@@ -67,7 +67,7 @@ function Home() {
                     </div>
                     <div className={`absolute w-full h-[175px] md:h-[300px] top-[45%] md:top-[35%] left-1/2 -translate-x-1/2 z-[2] px-1 ${isTransitioning ? "fade-out" : "fade-in-ASCII"}`}>
                         <ASCIIText 
-                            text="Royce Chud Roxas"
+                            text="Johann *******"
                             enableWaves={false}
                             asciiFontSize={isMobile ? 2 : 5}
                         />
