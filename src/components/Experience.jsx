@@ -4,16 +4,27 @@ function Experience() {
 
     const data = [
         {
+        name: 'Savvas',
+        username: 'Software Engineering Co-op',
+        image:
+            'https://www.ibm.com/brand/experience-guides/developer/b1db1ae501d522a1a4b49613fe07c9f1/01_8-bar-positive.svg',
+        location:'Boston, MA',
+        bio: ["Incoming this summer 2026"
+        ],
+        date: 'June 2026 - Present'
+        },
+
+        {
         name: 'IBM',
         username: 'Software Developer Co-op',
         image:
             'https://www.ibm.com/brand/experience-guides/developer/b1db1ae501d522a1a4b49613fe07c9f1/01_8-bar-positive.svg',
         location:'Lowell, MA',
         bio: ["Developed an automated FVT result analysis system that analyzes pipeline data and determines valid defects, utilizing IBM Bob for failure classification and flaky test identification.",
-            "Extracted pipeline execution data from a pre-existing MongoDB and architected a PostgreSQL database to systematically log test failures and analyze results across multiple runs",
-            "Integrated a defect management system that creates JIRA tickets with complete context, including stack traces and related information, and tracks bug lifecycles through continuous monitoring and reporting."
+            "Extracted pipeline execution data from a pre-existing MongoDB and architected a PostgreSQL database to systematically log failures and analyze results across multiple runs.",
+            "Engineered the FVT Diagnostic Tool utilizing Flask for API development and dynamic template rendering to deliver a comprehensive web interface for pipeline analysis."
         ],
-        date: 'Jan 2026 - Present'
+        date: 'Jan 2026 - June 2026'
         }, 
         
         {

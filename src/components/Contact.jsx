@@ -9,10 +9,10 @@ function Contact() {
         <div>
             <div className={`absolute flex-col top-[30%] left-1/2 -translate-x-1/2 z-[3] flex gap-7 items-center`}>
                 <a
-                    href='/email'
+                    href='mailto:Agojo62@gmail.com'
                     className="text-sm md:text-2xl w-fit portfolio-button text-white no-underline font-['IBM_Plex_Mono',_monospace] border-2 border-white px-10 py-[15px] transition-all duration-300 whitespace-nowrap hover:bg-white hover:text-black cursor-pointer"
                 > 
-                    Email Me!
+                    Agojo62@gmail.com
                 </a>
                 {
                     list.map((link, index) => (
