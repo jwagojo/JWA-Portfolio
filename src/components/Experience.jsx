@@ -19,7 +19,7 @@ function Experience() {
     const data = [
         {
         name: 'Savvas',
-        username: 'Software Engineering Co-op',
+        username: 'Software Engineering Intern',
         image:
             'https://yt3.googleusercontent.com/Vks7INjMUwJUMITpWC6AzfSoRTPJ7g2Jzhu9XRages_wCF742wjfUYgf9hqiZ49OznSmAzM94A=s900-c-k-c0x00ffffff-no-rj',
         location:'Boston, MA',

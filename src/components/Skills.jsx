@@ -17,11 +17,11 @@ function Skills() {
     const categories = [
         {
             label: 'Languages',
-            skills: ['C', 'C++', 'Python', 'TypeScript', 'HTML/CSS', 'JavaScript', 'Java', 'SQL', 'GraphQL']
+            skills: ['C', 'C++', 'Python', 'TypeScript', 'HTML/CSS', 'JavaScript', 'Java', 'SQL']
         },
         {
             label: 'Web Technologies',
-            skills: ['React.js', 'Next.js', 'Node.js', 'Flask', 'Tailwind CSS', 'JWT', 'REST API']
+            skills: ['React.js', 'Next.js', 'Node.js', 'Flask', 'Tailwind CSS', 'JWT', 'REST API', 'GraphQL', 'Docker']
         },
         {
             label: 'AI & ML',
@@ -29,7 +29,7 @@ function Skills() {
         },
         {
             label: 'Cloud & Architecture',
-            skills: ['AWS CDK', 'Serverless Architecture', 'AWS', 'Azure', 'Git']
+            skills: ['AWS CDK', 'Serverless Architecture', 'AWS', 'Azure', 'Git', 'IBM Cloud', 'OpenShift (Red Hat)', 'Kubernetes', 'Tekton']
         },
         {
             label: 'Developer Tools',
