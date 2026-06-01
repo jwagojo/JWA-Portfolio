@@ -34,9 +34,10 @@ function Experience() {
         image:
             'https://www.ibm.com/brand/experience-guides/developer/b1db1ae501d522a1a4b49613fe07c9f1/01_8-bar-positive.svg',
         location:'Lowell, MA',
-        bio: ["Developed an automated FVT result analysis system that analyzes pipeline data and determines valid defects, utilizing IBM Bob for failure classification and flaky test identification.",
-            "Extracted pipeline execution data from a pre-existing MongoDB and architected a PostgreSQL database to systematically log failures and analyze results across multiple runs.",
-            "Engineered the FVT Diagnostic Tool utilizing Flask for API development and dynamic template rendering to deliver a comprehensive web interface for pipeline analysis."
+        bio: ["Architected a multi-layer AI pipeline using LangGraph to autonomously analyze FVT results across 10 pipelines, reducing manual triage time from hours to minutes, classifying failures via IBM Bob log extraction with RAG-augmented context, then deduplicating defects through a state machine integrated with the JIRA REST API.",
+            "Engineered a multi-phase eligibility system filtering 70–80% of pipeline noise before AI processing via stagnation detection and version change analysis, propagating valid builds through an Apache Kafka event-driven architecture.",
+            "Queried execution data from a pre-existing MongoDB instance, architected a new PostgreSQL database for logging failures, and engineered the FVT Diagnostic Tool using Flask with 30+ REST API endpoints and dynamic template rendering for pipeline monitoring, flaky test analysis, and defect tracking dashboard.",
+            "Implemented a Redis-backed multi-layer caching strategy for classification results and JIRA deduplication data, and built an event-driven Slack alerting system with per-pipeline rate limiting to notify engineering teams of build failures in real time."
         ],
         date: 'Jan 2026 - May 2026'
         }, 

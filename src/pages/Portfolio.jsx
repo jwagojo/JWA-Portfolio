@@ -43,7 +43,7 @@ function Portfolio() {
                         Wesley Agojo
                     </h1>
                     <h2 className="font-['IBM_Plex_Mono',_monospace] mb-2 text-xs md:text-xl" style={{ color: '#d5d3d3ff' }}>
-                        SDE Co-op @ IBM | Incoming SWE Intern @ Savvas | CS + Math @ University of Massachusetts Lowell ‘27
+                        SWE Intern @ Savvas | Prev @ IBM | CS + Math @ University of Massachusetts Lowell ‘27
                     </h2>
                     <div className="mt-4 md:mt-8 flex flex-col gap-3 md:gap-4">
                         <a 
