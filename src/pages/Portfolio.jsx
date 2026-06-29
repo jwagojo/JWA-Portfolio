@@ -79,7 +79,7 @@ function Portfolio() {
             )}
 
             {!showMenu && (
-                <div className={`absolute inset-0 custom-scrollbar ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
+                <div className={`absolute inset-[calc(0.75rem+2px)] md:inset-[calc(1.5rem+2px)] overflow-hidden custom-scrollbar ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
                     <BackButton onClick={() => handleSectionClick('')} />
                     {useSection === 'projects' && <Projects />}
                     {useSection === 'experience' && <Experience />}

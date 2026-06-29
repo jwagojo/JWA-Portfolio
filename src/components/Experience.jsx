@@ -9,8 +9,9 @@ function Experience() {
         const el = scrollRef.current;
         if (!el) return;
         const handleScroll = () => {
-            if (el.scrollTop > 40) setShowScrollHint(false);
-            else setShowScrollHint(true);
+            const isMobile = window.innerWidth < 768;
+            const scrolled = isMobile ? el.scrollTop > 40 : el.scrollLeft > 40;
+            setShowScrollHint(!scrolled);
         };
         el.addEventListener("scroll", handleScroll);
         return () => el.removeEventListener("scroll", handleScroll);
@@ -19,18 +20,22 @@ function Experience() {
     const data = [
         {
         name: 'Savvas',
-        username: 'Software Engineering Intern',
+        username: 'Software Engineer Intern',
         image:
             'https://yt3.googleusercontent.com/Vks7INjMUwJUMITpWC6AzfSoRTPJ7g2Jzhu9XRages_wCF742wjfUYgf9hqiZ49OznSmAzM94A=s900-c-k-c0x00ffffff-no-rj',
         location:'Boston, MA',
-        bio: ["Incoming this summer 2026"
+        bio: [
+            "Engineered a serverless, event-driven RAG pipeline within GitHub Actions to sync codebase updates, utilizing the Amazon Bedrock Confluence Data Source connector for automated, incremental knowledge ingestion.",
+            "Developed a Python script leveraging the GitHub REST API to extract PR metadata and raw Git diffs, applying a Map-Reduce summarization strategy with AWS Bedrock LLMs to efficiently process massive code changes.",
+            "Implemented semantic vector searches and hybrid filtering across Bedrock Knowledge Bases (OpenSearch), evaluating Confluence document similarity via confidence scores to automatically post documentation update suggestions to PRs.",
+            "Architected the system as a GitHub Composite Action using a 'Hub and Spoke' deployment model, enabling dynamic parameterization and seamless adoption across 50+ organizational repositories without duplicate maintenance."
         ],
         date: 'June 2026 - Present'
         },
 
         {
         name: 'IBM',
-        username: 'Software Developer Co-op',
+        username: 'Software Developer Intern',
         image:
             'https://www.ibm.com/brand/experience-guides/developer/b1db1ae501d522a1a4b49613fe07c9f1/01_8-bar-positive.svg',
         location:'Lowell, MA',
@@ -63,11 +68,10 @@ function Experience() {
             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqUWrxeJVbvFammBZPF11hAnOSPob3oNDQdg&s',
         location:'Lowell, MA',
         bio: [
-            "Directed an executive board of 15 officers, overseeing project timelines for cultural initiatives", 
-            "Grew engagement through club culture and effective reported channels for project management", 
-            "Served as official representative to UML community and external organizations, promoting Filipino heritage"
+            "Directed and mentored an executive board of 10 officers, delegating responsibilities and overseeing project timelines for all cultural and outreach initiatives.",
+            "Grew member engagement through fostering an inclusive club culture and implementing effective communication channels for project management and event planning."
         ],
-        date: 'Oct 2025 - Present'
+        date: 'Sep 2025 - Present'
         }, 
 
         {
@@ -83,24 +87,32 @@ function Experience() {
 
 
     return (
-        <div ref={scrollRef} className="h-full overflow-y-auto md:overflow-hidden">
-            <div className="md:scale-120 md:absolute px-6 pt-20 pb-10 flex-col md:px-12 md:py-12 md:top-[20%] md:left-[10%] md:flex-row flex-wrap md:max-h-full md:max-w-full flex gap-4 md:gap-7">
-                
-                {data.map((item, index) => ((
-                    <div key={index} className="md:scale-110  portfolio-button md:px-8 py-[10px] transition-all">
-                    <FlipCard data={item} />
-                    </div>
-                    )))
-                }
-
+        <div className="relative h-full overflow-hidden">
+            <div ref={scrollRef} className="h-full overflow-y-auto overflow-x-hidden md:overflow-x-auto md:overflow-y-hidden custom-scrollbar">
+                <div className="flex flex-col items-center gap-4 px-6 pt-20 pb-10 md:flex-row md:flex-nowrap md:items-center md:gap-7 md:min-h-full md:w-max md:px-12 md:py-12 md:scale-110 md:origin-left">
+                    {data.map((item, index) => ((
+                        <div key={index} className="shrink-0 portfolio-button md:px-8 py-[10px] transition-all">
+                        <FlipCard data={item} />
+                        </div>
+                        )))
+                    }
+                </div>
             </div>
 
-            {/* Scroll hint — mobile only */}
-            <div className={`md:hidden fixed right-4 bottom-1/2 translate-y-1/2 flex flex-col items-center gap-1 pointer-events-none transition-opacity duration-500 ${showScrollHint ? 'opacity-100' : 'opacity-0'}`}>
+            {/* Scroll hint — mobile (vertical) */}
+            <div className={`md:hidden absolute right-4 bottom-1/2 translate-y-1/2 flex flex-col items-center gap-1 pointer-events-none transition-opacity duration-500 ${showScrollHint ? 'opacity-100' : 'opacity-0'}`}>
                 <svg xmlns="http://www.w3.org/2000/svg" className="animate-bounce w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
                 <span className="text-white text-[10px] font-['IBM_Plex_Mono',_monospace] tracking-widest uppercase [writing-mode:vertical-rl]">Scroll</span>
+            </div>
+
+            {/* Scroll hint — desktop (horizontal) */}
+            <div className={`hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 items-center gap-2 pointer-events-none transition-opacity duration-500 ${showScrollHint ? 'opacity-100' : 'opacity-0'}`}>
+                <span className="text-white text-[10px] font-['IBM_Plex_Mono',_monospace] tracking-widest uppercase">Scroll</span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="animate-bounce w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
             </div>
         </div>
     )
